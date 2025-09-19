@@ -1,0 +1,16 @@
+com/ifood/api/controller/MenuItemController.class
+com/ifood/api/repository/MenuItemRepository.class
+com/ifood/api/repository/OrderRepository.class
+com/ifood/api/repository/RestaurantRepository.class
+com/ifood/api/model/OrderItem.class
+com/ifood/api/exception/GlobalExceptionHandler.class
+com/ifood/api/model/Order.class
+com/ifood/api/controller/RestaurantController.class
+com/ifood/api/controller/OrderController.class
+com/ifood/api/service/OrderService.class
+com/ifood/api/service/MenuItemService.class
+com/ifood/api/IfoodApiApplication.class
+com/ifood/api/model/MenuItem.class
+com/ifood/api/service/RestaurantService.class
+com/ifood/api/model/OrderStatus.class
+com/ifood/api/model/Restaurant.class
