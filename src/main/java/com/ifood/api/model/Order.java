@@ -35,7 +35,6 @@ public class Order {
     @JoinColumn(name = "restaurant_id", nullable = false)
     private Restaurant restaurant;
     
-    @NotNull(message = "Total amount is required")
     @PositiveOrZero(message = "Total amount must be positive or zero")
     @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal totalAmount;

@@ -67,11 +67,15 @@ public class OrderService {
     }
     
     private void calculateOrderTotal(Order order) {
-        BigDecimal itemsTotal = order.getOrderItems().stream()
-                .map(OrderItem::getSubtotal)
-                .reduce(BigDecimal.ZERO, BigDecimal::add);
+        BigDecimal itemsTotal = BigDecimal.ZERO;
         
-        BigDecimal deliveryFee = order.getRestaurant() != null ? 
+        if (order.getOrderItems() != null && !order.getOrderItems().isEmpty()) {
+            itemsTotal = order.getOrderItems().stream()
+                    .map(OrderItem::getSubtotal)
+                    .reduce(BigDecimal.ZERO, BigDecimal::add);
+        }
+        
+        BigDecimal deliveryFee = order.getRestaurant() != null && order.getRestaurant().getDeliveryFee() != null ? 
                 order.getRestaurant().getDeliveryFee() : BigDecimal.ZERO;
         
         order.setTotalAmount(itemsTotal.add(deliveryFee));

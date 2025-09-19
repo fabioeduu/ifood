@@ -1,5 +1,6 @@
 package com.ifood.api.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -34,6 +35,7 @@ public class Restaurant {
     @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal deliveryFee;
     
+    @JsonManagedReference
     @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<MenuItem> menuItems = new ArrayList<>();
     

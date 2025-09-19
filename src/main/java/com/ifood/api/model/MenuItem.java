@@ -1,5 +1,6 @@
 package com.ifood.api.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -30,6 +31,7 @@ public class MenuItem {
     @Column(nullable = false)
     private Boolean available = true;
     
+    @JsonBackReference
     @NotNull(message = "Restaurant is required")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "restaurant_id", nullable = false)
